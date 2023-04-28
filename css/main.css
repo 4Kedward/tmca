@@ -1,0 +1,985 @@
+/*! HTML5 Boilerplate v8.0.0 | MIT License | https://html5boilerplate.com/ */
+
+/* main.css 2.1.0 | MIT License | https://github.com/h5bp/main.css#readme */
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  color: #222;
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * Vendor-prefixed and regular ::selection selectors cannot be combined:
+ * https://stackoverflow.com/a/16982510/7133471
+ *
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+  resize: vertical;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+:root {
+  --bg-color-1: #4C565E;
+  --bg-color-2: #CCEAEE;
+  --bg-color-3: #528D8A;
+  --bg-color-4: #D3CC8B;
+  --bg-color-5: #8F8B54;
+  --bg-color-6: #FFFFFF;
+  --bg-color-7: #ED4D52;
+  --bg-color-8: #BC494C;
+  --bg-color-9: #4C565ECC;
+  --bg-color-10: #FFFF00;
+  --txt-color-1: #222222;
+  --txt-color-2: #C69C6D;
+  --txt-color-3: #B72126;
+  --txt-color-4: #8F8B54;
+  --txt-color-5: #FFFFFF;
+  --txt-color-6: #D3CC8B;
+
+  --size-xs: 0.75rem;
+  --size-sm: 1rem;
+  --size-base: 1.25rem;
+  --size-md: 1.5rem;
+  --size-lg: 2rem;
+  --size-xl: 3rem;
+  --size-xxl: 5rem;
+  --size-xxxl: 10rem;
+
+  --font-base: Arial,
+    Geneva,
+    Tahoma,
+    sans-serif;
+  --font-fancy: 'Pacifico', cursive;
+  --font-title: 'Berkshire Swash', cursive;
+  --font-handwriting: 'Caveat', cursive;
+
+  --border-base: 1px solid var(--txt-color-1);
+
+  --shadow-base: 8px 8px 0px 0px #0C0C0C30;
+  --shadow-txt: 1px 1px 0px #0C0C0C;
+  --shadow-glow: 0 0 12px 6px #eaeec6,
+    0 0 18px 10px #f0f,
+    0 0 25px 15px #0ff;
+}
+
+/* structural */
+body {
+  background: var(--bg-color-1);
+  overflow: hidden;
+  font-family: var(--font-base);
+}
+
+body:before {
+  content: "";
+  background-image: linear-gradient(140deg,
+      hsl(240deg 100% 20%) 0%,
+      hsl(289deg 100% 21%) 11%,
+      hsl(315deg 100% 27%) 22%,
+      hsl(329deg 100% 36%) 33%,
+      hsl(337deg 100% 43%) 44%,
+      hsl(357deg 91% 59%) 56%,
+      hsl(17deg 100% 59%) 67%,
+      hsl(34deg 100% 53%) 78%,
+      hsl(45deg 100% 50%) 89%,
+      hsl(55deg 100% 50%) 100%);
+  background-size: 400% 400%;
+  display: block;
+  width: 100dvw;
+  height: 100dvh;
+  position: absolute;
+  inset: 0;
+  animation: aurora 5s ease-in-out infinite;
+}
+
+@keyframes aurora {
+  0% {
+    opacity: 0.1;
+    background-position: 0% 50%;
+  }
+
+  50% {
+    opacity: 0.3;
+    background-position: 100% 50%;
+  }
+
+  100% {
+    opacity: 0.1;
+    background-position: 0% 50%;
+  }
+}
+
+
+.container {
+  max-width: 1400px;
+  margin-inline: auto;
+}
+
+a {
+  text-decoration: none;
+  color: var(--txt-color-2);
+}
+
+a:hover {
+  color: var(--txt-color-5);
+}
+
+.button {
+  background: var(--bg-color-5);
+  border-radius: var(--size-xxl);
+  font-family: var(--font-title);
+  font-size: var(--size-md);
+  color: var(--bg-color-1);
+  padding: var(--size-sm) var(--size-lg);
+  box-shadow: var(--shadow-base);
+}
+
+.button:hover {
+  color: var(--txt-color-5);
+  background: var(--bg-color-8);
+  box-shadow: var(--shadow-glow);
+}
+
+/* header */
+header {
+  position: absolute;
+  width: 100%;
+  padding: var(--size-sm) var(--size-xl);
+  z-index: 100;
+  transition: all 1s ease-in-out;
+}
+
+.scrollDown header {
+  transform: translateY(-100%);
+  backdrop-filter: unset;
+}
+
+.scrollUp header {
+  transition: all 0.5s ease-in-out;
+  backdrop-filter: blur(4px);
+}
+
+header div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--size-xl);
+}
+
+.logo {
+  flex: 1;
+}
+
+.logo img:hover {
+  filter: brightness(1.4);
+}
+
+.logo img {
+  width: 200px;
+}
+
+nav {
+  display: flex;
+  gap: var(--size-xl);
+  font-family: var(--font-fancy);
+  font-size: var(--size-base);
+  line-height: var(--size-sm);
+}
+
+nav a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 1s ease-in-out;
+  text-shadow: var(--shadow-txt);
+}
+
+nav a:hover {
+  scale: 1.2;
+}
+
+lord-icon {
+  width: var(--size-xl);
+  height: var(--size-xl);
+}
+
+.book-now-button {
+  height: var(--size-base);
+}
+
+/* main */
+main {
+  transform-style: preserve-3d;
+}
+
+/* title */
+.title-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 90dvh;
+}
+
+.title {
+  display: grid;
+  grid-template-rows: 30vh clamp(2rem, 8vw, 8rem) 1fr 6vw;
+  grid-template-columns: 10vw 1fr 10vw;
+  background: url(../img/SVG/main.svg) center no-repeat;
+  position: relative;
+}
+
+.separator {
+  grid-area: 3 / 2 / 3 / 2;
+  align-self: start;
+  justify-self: center;
+  width: 30vw;
+}
+
+.scroll-down-arrow {
+  display: block;
+  position: absolute;
+  bottom: 5dvh;
+  left: 50%;
+  translate: -50% 0;
+  transition: all 1s ease-in-out;
+}
+
+.scrollDown .scroll-down-arrow,
+.scrollUp .scroll-down-arrow {
+  opacity: 0;
+}
+
+.award-title {
+  grid-area: 4 / 2 / 4 / 2;
+  align-self: center;
+  justify-self: center;
+  font-family: var(--font-fancy);
+  font-size: 2vw;
+  line-height: var(--size-sm);
+  color: var(--txt-color-3);
+  margin-top: var(--size-base);
+}
+
+.trophy {
+  width: var(--size-xl);
+  height: auto;
+  display: inline-block;
+  padding-inline: var(--size-xs);
+  translate: 0 -0.25em;
+}
+
+.trophy:first-child {
+  transform: rotate(10deg);
+}
+
+.trophy:last-child {
+  transform: rotate(-10deg);
+}
+
+h1,
+span.copy {
+  grid-area: 2 / 2 / 2 / 2;
+  font-family: var(--font-title);
+  text-align: center;
+  text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000,
+    2px 2px 0 #000;
+  font-size: clamp(2rem, 4vw, 6rem);
+  display: block;
+  line-height: 2;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  color: var(--txt-color-2);
+  z-index: 50;
+}
+
+.copy-1 {
+  transform: perspective(500px) translate3d(0, 0, -15px);
+  color: var(--txt-color-6);
+  z-index: 40;
+}
+
+.copy-2 {
+  transform: perspective(500px) translate3d(0, 0, -30px);
+  color: var(--txt-color-4);
+  z-index: 30;
+}
+
+.copy-3 {
+  transform: perspective(500px) translate3d(0, 0, -45px);
+  color: var(--txt-color-3);
+  z-index: 20;
+}
+
+/* parallax background */
+.wrapper {
+  height: 100dvh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  perspective: 10px;
+  scroll-behavior: smooth;
+}
+
+.parallax-wrapper {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100dvh;
+  transform-style: preserve-3d;
+  z-index: -1;
+}
+
+.far-background {
+  background: url(../img/1x/main_bg3.png) no-repeat top center;
+  transform: translateZ(-50px) scale(6.5) translateY(-20dvh);
+}
+
+.background {
+  background: url(../img/SVG/main_bg2.svg) no-repeat top center;
+  transform: translateZ(-13px) scale(3.5) translateY(-14dvh);
+}
+
+.foreground {
+  background: url(../img/SVG/main_bg1.svg) no-repeat center 6em;
+  transform: translateZ(-3px) scale(1.5) translateY(-28dvh);
+}
+
+.far-background,
+.background,
+.foreground {
+  position: absolute;
+  height: clamp(250px, 50vh, 50vh);
+  width: 100vw;
+  background-size: 100%;
+  z-index: -1;
+  left: 0;
+  top: 0;
+  transition: all 200ms ease-out;
+}
+
+/* postcard */
+.postcard {
+  display: flex;
+  justify-content: center;
+  background: var(--bg-color-2);
+  padding-block-end: var(--size-xxl);
+}
+
+.postcard-container {
+  width: clamp(320px, 100%, 1000px);
+  translate: 200% 0;
+  aspect-ratio: 1.62;
+  background: url(../img/SVG/postcard.svg) top center;
+  background-size: cover;
+  box-shadow: var(--shadow-base);
+  transform-style: preserve-3d;
+  display: flex;
+  align-items: center;
+  transition: all 100ms cubic-bezier(0.390, 0.575, 0.565, 1.000);
+}
+
+.postcard-container::before,
+.postcard-container::after {
+  content: url('../img/SVG/elf_boy.svg');
+  display: block;
+  width: 12em;
+  position: absolute;
+  transform: translateZ(-1px);
+  top: 0;
+  transition: all 1s cubic-bezier(0.435, -0.600, 0.510, 1.525);
+  transform-origin: bottom center;
+}
+
+.postcard-container::after {
+  content: url('../img/SVG/elf_girl.svg');
+  right: 0;
+  transition-delay: 500ms;
+  transition-duration: 700ms;
+}
+
+.postcard-container:hover::before {
+  rotate: -45deg;
+}
+
+.postcard-container:hover::after {
+
+  rotate: 45deg;
+}
+
+.postcard-content {
+  width: 55%;
+  margin: var(--size-xl);
+  padding: var(--size-lg);
+  border-inline-end: 1px solid var(--txt-color-1);
+}
+
+.postcard-content h2 {
+  font-family: var(--font-title);
+  font-size: var(--size-xl);
+  color: var(--txt-color-4);
+  text-align: right;
+  margin-block-start: -2rem;
+}
+
+.logo-path {
+  display: block;
+}
+
+.logo-path {
+  stroke-dasharray: 2600;
+  stroke-dashoffset: 2600;
+}
+
+.writing .j {
+  animation: letter-animation 3s linear forwards;
+  animation-delay: 0.4s;
+}
+
+.writing .oin {
+  animation: letter-animation 5s linear forwards;
+  animation-delay: 0.6s;
+}
+
+.writing .dot {
+  animation: letter-animation 5s linear forwards;
+  animation-delay: 1.4s;
+}
+
+.writing .us {
+  animation: letter-animation 5s linear forwards;
+  animation-delay: 1.8s;
+}
+
+@keyframes letter-animation {
+  0% {
+    stroke-dashoffset: 2600;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* experience */
+.experience {
+  display: flex;
+  background: url(../img/1x/bg-sleigh-ride.jpg) no-repeat fixed;
+  background-size: cover;
+  height: 110dvh;
+  min-height: 1100px;
+  box-shadow: 0 0 200px rgba(255, 255, 255, 0.9) inset;
+  position: relative;
+  margin-bottom: -1px;
+}
+
+.background-transition {
+  position: absolute;
+  inset: 0;
+  width: 100dvw;
+  height: 100dvh;
+}
+
+.backdrop-effect {
+  animation: backdrop-fading 500ms ease-in-out 0ms 1;
+}
+
+@keyframes backdrop-fading {
+  0% {
+    backdrop-filter: blur(100px) opacity(0);
+  }
+
+  35% {
+    backdrop-filter: blur(100px) opacity(1);
+  }
+
+  75% {
+    backdrop-filter: blur(100px) opacity(1);
+  }
+
+  100% {
+    backdrop-filter: blur(100px) opacity(0);
+  }
+}
+
+
+h2 {
+  font-family: var(--font-title);
+  font-size: var(--size-xl);
+  font-weight: normal;
+  color: var(--txt-color-6);
+  text-align: center;
+  line-height: var(--size-sm);
+}
+
+h2:hover {
+  color: var(--bg-color-4);
+}
+
+.experience p {
+  text-align: center;
+  color: var(--txt-color-5);
+}
+
+.experience-separator {
+  background: url(../img/SVG/transition_1.svg) top center no-repeat, url(../img/SVG/transition_2.svg) bottom center no-repeat var(--bg-color-9);
+  padding-block: var(--size-xxxl);
+  position: relative;
+}
+
+.experience-image-carousel {
+  width: 100dvw;
+  min-height: 400px;
+  margin-block: var(--size-xl);
+  background: url(../img/SVG/crystal.svg) no-repeat center 70%;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.experience-image-container {
+  display: flex;
+  position: absolute;
+  transition: all 800ms ease-in-out;
+  translate: 33.3dvw;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.experience-image {
+  width: 33.3dvw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.experience-image lottie-player,
+.experience-image dotlottie-player {
+  scale: 0.5;
+  filter: grayscale(80);
+  transition: all 800ms cubic-bezier(0.435, -0.600, 0.510, 1.525);
+  translate: 0 -3em;
+}
+
+.experience-image .active-lottie {
+  scale: 1;
+  filter: none;
+}
+
+.prev,
+.next {
+  all: unset;
+  width: var(--size-xl);
+  height: var(--size-xl);
+  color: var(--bg-color-5);
+  cursor: pointer;
+}
+
+.prevContainer {
+  position: absolute;
+  left: 25dvw;
+  z-index: 100;
+  top: 40%;
+}
+
+.nextContainer {
+  position: absolute;
+  right: 25dvw;
+  z-index: 100;
+  top: 40%;
+}
+
+.prev:hover svg,
+.next:hover svg {
+  color: var(--bg-color-6);
+  box-shadow: var(--shadow-glow);
+  border-radius: 50%;
+}
+
+.prev:disabled,
+.prev[disabled] svg,
+.next:disabled,
+.next[disabled] svg {
+  color: var(--bg-color-1);
+  box-shadow: none;
+  opacity: 80%;
+}
+
+.experience-description {
+  display: flex;
+  justify-content: center;
+}
+
+.experience-description div {
+  display: flex;
+  align-content: flex-start;
+  max-width: 60%;
+}
+
+.experience h3 {
+  color: var(--txt-color-6);
+  font-size: var(--size-lg);
+  padding: var(--size-md);
+  line-height: var(--size-lg);
+  margin: 0;
+  min-width: 30%;
+  text-align: right;
+}
+
+h3 span {
+  position: absolute;
+  display: inline-block;
+  font-family: var(--font-handwriting);
+  font-weight: normal;
+  color: var(--txt-color-5);
+  font-size: var(--size-lg);
+  transform: translateX(-1.2em) translateY(-1em) rotate(-20deg);
+}
+
+h3:has(span) {
+  translate: 0 1.2em;
+}
+
+.experience-description div p {
+  text-align: left;
+  padding: var(--size-xs) var(--size-md);
+  border-inline-start: 1px solid var(--txt-color-1);
+}
+
+/* ticket */
+.ticket {
+  display: flex;
+  min-height: 500px;
+  align-items: center;
+  flex-direction: column;
+  gap: var(--size-xl);
+  background: var(--bg-color-4);
+  position: relative;
+  overflow: hidden;
+}
+
+.ticket h2 {
+  color: var(--bg-color-1);
+}
+
+.ticket p {
+  text-align: center;
+  color: var(--bg-color-1);
+}
+
+.ticket .button {
+  margin-block: var(--size-xl);
+}
+
+.ticket-image {
+  position: absolute;
+  width: 80%;
+  max-width: 1200px;
+  top: 80%;
+  transition: all 700ms cubic-bezier(0.435, -0.600, 0.510, 1.525);
+  transform-origin: bottom center;
+}
+
+.ticket-image-hover {
+  rotate: -7deg;
+  translate: 5% -40%;
+}
+
+.ticket div {
+  z-index: 1;
+}
+
+/* footer */
+footer {
+  background: var(--bg-color-1);
+  padding-block: var(--size-xl);
+  color: var(--txt-color-5);
+}
+
+footer .container {
+  display: flex;
+}
+
+.main-logo {
+  display: block;
+  width: clamp(100px, 30dvw, 300px);
+  padding-inline: var(--size-lg);
+}
+
+.info {
+  flex: 1;
+  padding-block-start: var(--size-xs);
+}
+
+.main-logo img {
+  max-width: 100%;
+}
+
+.social-media-link {
+  display: flex;
+  gap: var(--size-xs);
+  padding-inline-start: var(--size-md);
+  border-inline-start: 1px solid var(--bg-color-2);
+}
+
+.social-media-link a {
+  width: var(--size-xl);
+}
+
+.social-media-link a:hover img {
+  transition: all 200ms ease-in-out;
+  border-radius: 50%;
+  translate: -.5em -.5em;
+  box-shadow: var(--shadow-base);
+}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers
+ */
+
+.hidden,
+[hidden] {
+  display: none !important;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ *
+ * 1. For long content, line feeds are not interpreted as spaces and small width
+ *    causes content to wrap 1 word per line:
+ *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+ */
+
+.sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  /* 1 */
+}
+
+/*
+ * Extends the .sr-only class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+
+.sr-only.focusable:active,
+.sr-only.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  white-space: inherit;
+  width: auto;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+
+.invisible {
+  visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix::before,
+.clearfix::after {
+  content: " ";
+  display: table;
+}
+
+.clearfix::after {
+  clear: both;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+  /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+(-webkit-min-device-pixel-ratio: 1.25),
+(min-resolution: 1.25dppx),
+(min-resolution: 120dpi) {
+  /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   https://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+
+  *,
+  *::before,
+  *::after {
+    background: #fff !important;
+    color: #000 !important;
+    /* Black prints faster */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+  }
+
+  abbr[title]::after {
+    content: " (" attr(title) ")";
+  }
+
+  /*
+   * Don't show links that are fragment identifiers,
+   * or use the `javascript:` pseudo protocol
+   */
+  a[href^="#"]::after,
+  a[href^="javascript:"]::after {
+    content: "";
+  }
+
+  pre {
+    white-space: pre-wrap !important;
+  }
+
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  /*
+   * Printing Tables:
+   * https://web.archive.org/web/20180815150934/http://css-discuss.incutio.com/wiki/Printing_Tables
+   */
+  thead {
+    display: table-header-group;
+  }
+
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
