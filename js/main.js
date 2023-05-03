@@ -52,22 +52,22 @@ const experienceDetails = [
     {
         title: "<span>Santa's</span>Sleigh Ride",
         content: "What better way to begin a visit to the North Pole than jump on a sleigh and ride in style?<br /> <br />Reindeers Wilfred and Harvey will be harnessed, sprout - fuelled and ready to fly you direct to North Pole Airport; guided by an advanced magical navigation system and expertly flown by one of our elite Top Fun sleighpilots. After all, we’d hate for you to miss the runway and take a detour through the mystical thicket that surrounds the landing area…",
-        background: "../img/1x/bg-sleigh-ride.jpg"
+        background: "img/1x/bg-sleigh-ride.jpg"
     },
     {
         title: "Memory Lane",
         content: "Come and take a trip down Memory Lane to see where Santa’s Elves live. Stroll through the quaint high street and don’t forget to pop in to the Bar Humbug Sweet Shop for a special Christmas treat, before heading off down the twinkling tunnel of lights.",
-        background: "../img/1x/memory_lane.jpg"
+        background: "img/1x/memory_lane.jpg"
     },
     {
         title: "<span>Santa's</span>Sleigh Ride",
         content: "What better way to begin a visit to the North Pole than jump on a sleigh and ride in style?<br /> <br />Reindeers Wilfred and Harvey will be harnessed, sprout - fuelled and ready to fly you direct to North Pole Airport; guided by an advanced magical navigation system and expertly flown by one of our elite Top Fun sleighpilots. After all, we’d hate for you to miss the runway and take a detour through the mystical thicket that surrounds the landing area…",
-        background: "../img/1x/bg-sleigh-ride.jpg"
+        background: "/img/1x/bg-sleigh-ride.jpg"
     },
     {
         title: "Memory Lane",
         content: "Come and take a trip down Memory Lane to see where Santa’s Elves live. Stroll through the quaint high street and don’t forget to pop in to the Bar Humbug Sweet Shop for a special Christmas treat, before heading off down the twinkling tunnel of lights.",
-        background: "../img/1x/memory_lane.jpg"
+        background: "img/1x/memory_lane.jpg"
     }
 
 ]

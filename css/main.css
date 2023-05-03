@@ -152,6 +152,7 @@ textarea {
 body {
   background: var(--bg-color-1);
   overflow: hidden;
+  width: 100dvw;
   font-family: var(--font-base);
 }
 
@@ -298,9 +299,11 @@ lord-icon {
 
 .mobile-menu {
   position: absolute;
+  z-index: 100;
   right: 0;
+  top: 100px;
   translate: 100% 0;
-  background: #FFFFFFCC;
+  background: #FFFFFFDD;
   padding: var(--size-xl);
   border-radius: var(--size-xxxl) 0 0 var(--size-xxxl);
   transition: all 300ms cubic-bezier(0.390, 0.575, 0.565, 1.000);
@@ -406,6 +409,8 @@ lord-icon {
 /* main */
 main {
   transform-style: preserve-3d;
+  width: 100dvw;
+  overflow-x: hidden;
 }
 
 /* title */
@@ -878,7 +883,7 @@ h2:hover {
 }
 
 .experience-separator {
-  background: url(../img/SVG/transition_1.svg) top center no-repeat, url(../img/SVG/transition_2.svg) bottom center no-repeat var(--bg-color-9);
+  background: url(../img/SVG/transition_1.svg) top center repeat-x, url(../img/SVG/transition_2.svg) bottom center repeat-x var(--bg-color-9);
   padding-block: var(--size-xxxl);
   position: relative;
 }
@@ -950,7 +955,7 @@ h2:hover {
 .prev:hover svg,
 .next:hover svg {
   color: var(--bg-color-6);
-  box-shadow: var(--shadow-glow);
+  box-shadow: var(--shadow-base);
   border-radius: 50%;
 }
 
@@ -980,7 +985,7 @@ h2:hover {
   padding: 0 0.25em;
   line-height: var(--size-lg);
   margin: 0;
-  translate: 0 0.5em;
+  translate: 0.5em;
 }
 
 h3 span {
@@ -994,7 +999,7 @@ h3 span {
 }
 
 .experience h3:has(span) {
-  translate: 0 1em;
+  translate: 1.5em;
 }
 
 .experience-description div p {
