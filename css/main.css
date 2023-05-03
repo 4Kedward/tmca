@@ -484,6 +484,7 @@ main {
   left: 50%;
   translate: -50% 0;
   transition: var(--normal-1000ms-transition);
+  cursor: pointer;
 }
 
 .scrollDown .scroll-down-arrow,
