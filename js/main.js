@@ -23,6 +23,8 @@ scrollingWrapper.addEventListener('scroll', function () {
     }
     if (currentTopPos == 0) {
         document.getElementsByTagName('body')[0].classList.add("scrollToTop");
+    } else {
+        document.getElementsByTagName('body')[0].classList.remove("scrollToTop");
     }
     // saves the new position for iteration.
     prevTopPos = currentTopPos;
