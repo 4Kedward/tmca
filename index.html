@@ -59,12 +59,13 @@
     </div>
   </header>
   <main>
-    <div class="mobile-menu">
-      <div class="mobile-menu-icon">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
+    <div class="mobile-menu" id="mobile-menu">
+      <div class="mobile-menu-icon" role="button" aria-label="toggle mobile menu" aria-expanded="false"
+        aria-controls="mobile-menu" tabindex="0">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
       </div>
       <nav>
         <a href="/" class="sparkley">
@@ -103,7 +104,7 @@
         <lottie-player src="img/lottie/down.json" background="transparent" speed="1" style="width: 6em; height: auto;"
           loop autoplay></lottie-player>
       </a>
-      <div class="parallax-wrapper">
+      <div class="parallax-wrapper" aria-hidden="true">
         <div class="far-background"></div>
         <div class="background"></div>
         <div class="foreground"></div>
@@ -112,6 +113,7 @@
         <div class="postcard-container">
           <div class="postcard-content">
             <svg class="logo-path join-us" viewBox="0 0 337 97" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <title>Join Us</title>
               <g id="Group 1">
                 <path class="j"
                   d="M31.09 22C31.09 22 40.37 39.67 40.84 57.68C41.31 75.69 36.8 86.79 23.73 92.22C10.66 97.65 3.01 86.42 3.01 86.42"
@@ -143,14 +145,14 @@
         </div>
       </article>
       <article class="experience">
-        <div class="background-transition"></div>
+        <div class="background-transition" aria-hidden="true"></div>
         <div class="experience-separator">
           <h2>The Magical Experience</h2>
           <p>Before you book your sleigh, let’s take a sneak peek and see what delights await you on your journey…</p>
           <div class="experience-image-carousel">
             <div class="prevContainer">
-              <button onclick="prev();" class="prev" disabled><svg id="Layer_2" data-name="Layer 2"
-                  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 73.96 73.96">
+              <button onclick="prev();" class="prev" disabled><span class="sr-only">Previous Experience</span><svg
+                  id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 73.96 73.96">
                   <g id="main">
                     <g>
                       <circle cx="36.98" cy="36.98" r="36.48" fill="currentcolor" stroke="#000"
@@ -162,8 +164,8 @@
                 </svg></button>
             </div>
             <div class="nextContainer">
-              <button onclick="next();" class="next"><svg id="Layer_2" data-name="Layer 2"
-                  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 73.96 73.96">
+              <button onclick="next();" class="next"><span class="sr-only">Next Experience</span><svg id="Layer_2"
+                  data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 73.96 73.96">
                   <g id="main">
                     <g>
                       <circle cx="36.98" cy="36.98" r="36.48" fill="currentcolor" stroke="#000"
@@ -175,24 +177,27 @@
                 </svg>
               </button>
             </div>
-            <div class="experience-image-container">
+            <div class="experience-image-container" aria-label="image of the current showing experience">
               <div class="experience-image">
-                <lottie-player class="active-lottie" src="img/lottie/sleigh.json" background="transparent" speed="1"
-                  loop autoplay></lottie-player>
+                <lottie-player aria-hidden="true" class="active-lottie" src="img/lottie/sleigh.json"
+                  background="transparent" speed="1" loop autoplay></lottie-player>
               </div>
               <div class="experience-image">
-                <lottie-player src="img/lottie/memory.json" background="transparent" speed="1" loop></lottie-player>
+                <lottie-player aria-hidden="true" src="img/lottie/memory.json" background="transparent" speed="1"
+                  loop></lottie-player>
               </div>
               <div class="experience-image">
-                <lottie-player src="img/lottie/sleigh.json" background="transparent" speed="1" loop></lottie-player>
+                <lottie-player aria-hidden="true" src="img/lottie/sleigh.json" background="transparent" speed="1"
+                  loop></lottie-player>
               </div>
-              <div class="experience-image">
-                <lottie-player src="img/lottie/memory.json" background="transparent" speed="1" loop></lottie-player>
+              <div class="experience-image" aria-hidden="true">
+                <lottie-player aria-hidden="true" src="img/lottie/memory.json" background="transparent" speed="1"
+                  loop></lottie-player>
               </div>
             </div>
           </div>
           <div class="experience-description">
-            <div>
+            <div aria-live="polite">
               <h3><span>Santa's</span>Sleigh Ride</h3>
               <p>What better way to begin a visit to the North Pole than jump on a sleigh and ride in
                 style?<br /><br />Reindeers Wilfred and Harvey will be harnessed, sprout-fuelled and ready to fly
@@ -212,7 +217,7 @@
           <h2>R.S.V.P.</h2>
           <p>Tickets selling fast, book now to secure your place in this magical experience!</p>
         </div>
-        <img class="ticket-image" src="img/SVG/ticket.svg" alt="@ticket" />
+        <img class="ticket-image" src="img/SVG/ticket.svg" alt="" aria-hidden="true" />
         <div>
           <a class="button" href="/">
             Book Ticket Now
@@ -221,7 +226,8 @@
       </article>
       <footer>
         <div class="container">
-          <a class="main-logo" href="/"><img src="img/1x/4k_logo_crest.png" /></a>
+          <a class="main-logo" href="/"><img src="img/1x/4k_logo_crest.png"
+              alt="logo of 4 Kingdoms Adventure & Farm Park" /></a>
           <div class="info">
             <p><span>Address:</span>Newbury Road, Headley, RG19 8JY<br />
               <span>Tel:</span>01635 269678<br />
@@ -233,8 +239,10 @@
           </div>
           <div>
             <div class="social-media-link">
-              <p>Follow us:</p><a href="/"><img src="img/SVG/youtube.svg" /></a><a href="/"><img
-                  src="img/SVG/facebook.svg" /></a>
+              <p>Follow us:</p><a href="https://www.youtube.com/channel/UCRl2VoE1oecV_ZS2Untd5UA" target="_blank"><img
+                  src="img/SVG/youtube.svg" alt="Youtube" /></a><a
+                href="https://www.facebook.com/4kingdomsadventurepark/" target="_blank"><img src="img/SVG/facebook.svg"
+                  alt="Facebook" /></a>
             </div>
           </div>
         </div>

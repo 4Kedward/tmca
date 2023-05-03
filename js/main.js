@@ -50,10 +50,12 @@ mobileMenuIcon.addEventListener("click", () => {
         mobileMenu.style.translate = "100%";
         isMenuOpen = false;
         mobileMenuIcon.classList.remove("open");
+        mobileMenuIcon.toggleAttribute('aria-expanded');
     } else {
         mobileMenu.style.translate = "0";
         isMenuOpen = true;
         mobileMenuIcon.classList.add("open");
+        mobileMenuIcon.toggleAttribute('aria-expanded');
     }
 });
 
@@ -115,8 +117,10 @@ function playLottie() {
         if (ind == currentInd) {
             lottie.classList.add("active-lottie");
             if (!prefersReducedMotion.matches) { lottie.play(); }
+            lottie.setAttribute('aria-hidden', false);
         } else {
             lottie.classList.remove("active-lottie");
+            lottie.setAttribute('aria-hidden', true);
             lottie.pause();
         }
     });

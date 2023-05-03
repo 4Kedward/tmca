@@ -234,7 +234,7 @@ h2+p {
   font-size: var(--size-base);
 }
 
-@media screen and (min-wdith: 768px) {
+@media screen and (min-width: 768px) {
   .button:hover {
     box-shadow: var(--shadow-glow);
   }
