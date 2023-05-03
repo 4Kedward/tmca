@@ -62,7 +62,7 @@ const experienceDetails = [
     {
         title: "<span>Santa's</span>Sleigh Ride",
         content: "What better way to begin a visit to the North Pole than jump on a sleigh and ride in style?<br /> <br />Reindeers Wilfred and Harvey will be harnessed, sprout - fuelled and ready to fly you direct to North Pole Airport; guided by an advanced magical navigation system and expertly flown by one of our elite Top Fun sleighpilots. After all, we’d hate for you to miss the runway and take a detour through the mystical thicket that surrounds the landing area…",
-        background: "/img/1x/bg-sleigh-ride.jpg"
+        background: "img/1x/bg-sleigh-ride.jpg"
     },
     {
         title: "Memory Lane",
