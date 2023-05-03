@@ -327,7 +327,7 @@ lord-icon {
   background: #FFFFFFDD;
   padding: var(--size-xl);
   border-radius: var(--size-xxxl) 0 0 var(--size-xxxl);
-  transition: var(--bouncy-300ms-transition);
+  transition: var(--bouncy-800ms-transition);
 }
 
 .mobile-menu-icon {
