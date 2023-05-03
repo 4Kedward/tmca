@@ -50,6 +50,18 @@ mobileMenuIcon.addEventListener("click", () => {
     }
 });
 
+/* scroll to postcard */
+const scrollArrow = document.querySelector(".scroll-down-arrow");
+
+scrollArrow.addEventListener("click", (e) => {
+    e.preventDefault();
+    document.querySelector(".postcard").scrollIntoView({
+        behavior: 'smooth',
+        block: 'center'
+    });
+});
+
+
 /* prev and next experience */
 const experienceDetails = [
     {
