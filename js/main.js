@@ -109,16 +109,15 @@ var touchendX = 0;
 var gesuredZone = document.querySelector(".experience-image-carousel");
 
 gesuredZone.addEventListener('touchstart', function (event) {
-    touchstartX = event.screenX;
+    touchstartX = event.touches[0].clientX;
 }, false);
 
 gesuredZone.addEventListener('touchend', function (event) {
-    touchendX = event.screenX;
+    touchendX = event.changedTouches[0].clientX;
     handleGesure();
 }, false);
 
 function handleGesure() {
-    var swiped = 'swiped: ';
     if (touchendX < touchstartX) {
         prev();
     }
