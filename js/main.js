@@ -127,10 +127,12 @@ var touchendX = 0;
 var gesuredZone = document.querySelector(".experience-image-carousel");
 
 gesuredZone.addEventListener('touchstart', function (event) {
+    event.preventDefault();
     touchstartX = event.targetTouches[0].clientX;
 }, false);
 
 gesuredZone.addEventListener('touchend', function (event) {
+    event.preventDefault();
     touchendX = event.changedTouches[0].clientX;
     handleGesure();
 }, false);
