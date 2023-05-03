@@ -133,6 +133,12 @@ textarea {
   --shadow-glow: 0 0 12px 6px #eaeec6,
     0 0 18px 10px #f0f,
     0 0 25px 15px #0ff;
+
+  --normal-1000ms-transition: all 1s ease-in-out;
+  --normal-500ms-transition: all 500ms ease-in-out;
+  --bouncy-800ms-transition: all 800ms cubic-bezier(0.390, 0.575, 0.565, 1.000);
+  --bouncy-300ms-transition: all 300ms cubic-bezier(0.390, 0.575, 0.565, 1.000);
+  --bouncy-100ms-transition: all 100ms cubic-bezier(0.390, 0.575, 0.565, 1.000);
 }
 
 @media screen and (min-width:1024px) {
@@ -246,7 +252,7 @@ header {
   width: 100%;
   padding-block: var(--size-sm);
   z-index: 100;
-  transition: all 1s ease-in-out;
+  transition: var(--normal-1000ms-transition);
 }
 
 .scrollDown header {
@@ -255,7 +261,7 @@ header {
 }
 
 .scrollUp header {
-  transition: all 0.5s ease-in-out;
+  transition: var(--normal-500ms-transition);
   backdrop-filter: blur(4px);
 }
 
@@ -311,7 +317,7 @@ lord-icon {
   background: #FFFFFFDD;
   padding: var(--size-xl);
   border-radius: var(--size-xxxl) 0 0 var(--size-xxxl);
-  transition: all 300ms cubic-bezier(0.390, 0.575, 0.565, 1.000);
+  transition: var(--bouncy-300ms-transition);
 }
 
 .mobile-menu-icon {
@@ -338,7 +344,7 @@ lord-icon {
   opacity: 1;
   left: 12px;
   transform: rotate(0deg);
-  transition: .25s ease-in-out;
+  transition: var(--normal-500ms-transition);
 }
 
 .mobile-menu-icon span:nth-child(1) {
@@ -406,7 +412,7 @@ lord-icon {
     display: flex;
     flex-direction: column;
     align-items: center;
-    transition: all 1s ease-in-out;
+    transition: var(--normal-1000ms-transition);
     text-shadow: var(--shadow-txt);
   }
 }
@@ -449,7 +455,7 @@ main {
   bottom: 5dvh;
   left: 50%;
   translate: -50% 0;
-  transition: all 1s ease-in-out;
+  transition: var(--normal-1000ms-transition);
 }
 
 .scrollDown .scroll-down-arrow,
@@ -606,7 +612,7 @@ h1 {
   z-index: -1;
   left: 0;
   top: 0;
-  transition: all 200ms ease-out;
+  transition: var(--normal-300ms-transition);
 }
 
 @media screen and (min-width: 768px) {
@@ -642,7 +648,7 @@ h1 {
   transform-style: preserve-3d;
   display: flex;
   align-items: center;
-  transition: all 100ms cubic-bezier(0.390, 0.575, 0.565, 1.000);
+  transition: var(--bouncy-100ms-transition);
 }
 
 .postcard-content {
@@ -779,7 +785,7 @@ h1 {
     top: 0;
     left: 0;
     transform-origin: bottom center;
-    transition: all 800ms cubic-bezier(0.435, -0.600, 0.510, 1.525);
+    transition: var(--bouncy-800ms-transition);
   }
 
   .postcard-container::after {
@@ -910,7 +916,7 @@ h2:hover {
 .experience-image-container {
   display: flex;
   position: absolute;
-  transition: all 800ms ease-in-out;
+  transition: var(--normal-1000ms-transition);
   align-items: center;
   justify-content: center;
   height: 100%;
@@ -931,7 +937,7 @@ h2:hover {
 .experience-image dotlottie-player {
   scale: 0.5;
   filter: grayscale(80);
-  transition: all 800ms cubic-bezier(0.435, -0.600, 0.510, 1.525);
+  transition: var(--bouncy-800ms-transition);
 }
 
 .experience-image .active-lottie {
@@ -1119,7 +1125,7 @@ h3 span {
   width: 80%;
   max-width: 1200px;
   top: 80%;
-  transition: all 700ms cubic-bezier(0.435, -0.600, 0.510, 1.525);
+  transition: var(--bouncy-800ms-transition);
   transform-origin: bottom center;
   translate: 0 -10%;
   rotate: -3deg;
@@ -1189,7 +1195,7 @@ footer .container {
 }
 
 .social-media-link a:hover img {
-  transition: all 200ms ease-in-out;
+  transition: var(--normal-300ms-transition);
   border-radius: 50%;
   translate: -.5em -.5em;
   box-shadow: var(--shadow-base);
@@ -1378,5 +1384,36 @@ footer .container {
   h2,
   h3 {
     page-break-after: avoid;
+  }
+}
+
+@media (prefers-reduced-motion) {
+  :root {
+    --normal-1000ms-transition: none;
+    --normal-500ms-transition: none;
+    --bouncy-800ms-transition: none;
+    --bouncy-300ms-transition: none;
+    --bouncy-100ms-transition: none;
+  }
+
+  body:before {
+    animation: none;
+  }
+
+  .postcard-container {
+    translate: 0;
+  }
+
+  .parallax-wrapper {
+    transform-style: flat;
+  }
+
+  .logo-path {
+    stroke-dasharray: 0;
+    stroke-dashoffset: 0;
+  }
+
+  lord-icon {
+    display: none;
   }
 }

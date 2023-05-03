@@ -1,3 +1,7 @@
+const prefersReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+);
+
 /* scroll direction */
 // Initial state
 let prevTopPos = 0;
@@ -7,6 +11,7 @@ const scrollingWrapper = document.querySelector('.wrapper');
 const postcard = document.querySelector(".postcard-container");
 const joinUs = document.querySelector(".logo-path");
 scrollingWrapper.addEventListener('scroll', function () {
+    if (prefersReducedMotion.matches) return;
     // detects new state and compares it with the new one
     const currentTopPos = scrollingWrapper.scrollTop;
     if (currentTopPos <= prevTopPos || currentTopPos <= 0) {
@@ -59,6 +64,8 @@ scrollArrow.addEventListener("click", (e) => {
         behavior: 'smooth',
         block: 'center'
     });
+    document.getElementsByTagName('body')[0].classList.add("scrollDown");
+    document.getElementsByTagName('body')[0].classList.remove("scrollUp");
 });
 
 
@@ -87,7 +94,6 @@ const experienceDetails = [
 
 ]
 
-
 const experienceCarouselContainer = document.querySelector(".experience-image-carousel");
 const experienceBackgroundPhoto = document.querySelector(".experience");
 const experienceImageContainer = document.querySelector(".experience-image-container");
@@ -106,7 +112,7 @@ function playLottie() {
     lotties.forEach((lottie, ind) => {
         if (ind == currentInd) {
             lottie.classList.add("active-lottie");
-            lottie.play();
+            if (!prefersReducedMotion.matches) { lottie.play(); }
         } else {
             lottie.classList.remove("active-lottie");
             lottie.pause();
@@ -144,12 +150,17 @@ function prev() {
     currentInd--;
     if (currentInd === 0) { prevButton.disabled = true; }
     if (currentInd !== experienceDetails.length - 1) { nextButton.disabled = false; }
-    backdrop.classList.remove("backdrop-effect");
-    void backdrop.offsetWidth;
-    backdrop.classList.add("backdrop-effect");
-    setTimeout(function () {
+
+    if (prefersReducedMotion.matches) {
         experienceBackgroundPhoto.style.backgroundImage = `url(${experienceDetails[currentInd].background})`;
-    }, 100);
+    } else {
+        backdrop.classList.remove("backdrop-effect");
+        void backdrop.offsetWidth;
+        backdrop.classList.add("backdrop-effect");
+        setTimeout(function () {
+            experienceBackgroundPhoto.style.backgroundImage = `url(${experienceDetails[currentInd].background})`;
+        }, 100);
+    }
     experienceTitleContainer.innerHTML = experienceDetails[currentInd].title;
     experienceContentContainer.innerHTML = experienceDetails[currentInd].content;
     experienceImageContainer.style.translate = `${-1 * experienceImageWidth * (currentInd - 1)}px 0`;
@@ -162,12 +173,16 @@ function next() {
     currentInd++;
     if (currentInd !== 0) { prevButton.disabled = false; }
     if (currentInd == experienceDetails.length - 1) { nextButton.disabled = true; }
-    backdrop.classList.remove("backdrop-effect");
-    void backdrop.offsetWidth;
-    backdrop.classList.add("backdrop-effect");
-    setTimeout(function () {
+    if (prefersReducedMotion.matches) {
         experienceBackgroundPhoto.style.backgroundImage = `url(${experienceDetails[currentInd].background})`;
-    }, 100);
+    } else {
+        backdrop.classList.remove("backdrop-effect");
+        void backdrop.offsetWidth;
+        backdrop.classList.add("backdrop-effect");
+        setTimeout(function () {
+            experienceBackgroundPhoto.style.backgroundImage = `url(${experienceDetails[currentInd].background})`;
+        }, 100);
+    }
     experienceTitleContainer.innerHTML = experienceDetails[currentInd].title;
     experienceContentContainer.innerHTML = experienceDetails[currentInd].content;
     experienceImageContainer.style.translate = `${-1 * experienceImageWidth * (currentInd - 1)}px 0`;
@@ -178,8 +193,14 @@ function next() {
 const ticketImage = document.querySelector(".ticket-image");
 const ticketButton = document.querySelector(".ticket .button");
 
-ticketButton.addEventListener("mouseover", () => { ticketImage.classList.add("ticket-image-hover") });
-ticketButton.addEventListener("mouseout", () => { ticketImage.classList.remove("ticket-image-hover") });
+ticketButton.addEventListener("mouseover", () => {
+    if (prefersReducedMotion.matches) return;
+    ticketImage.classList.add("ticket-image-hover")
+});
+ticketButton.addEventListener("mouseout", () => {
+    if (prefersReducedMotion.matches) return;
+    ticketImage.classList.remove("ticket-image-hover")
+});
 
 
 /* stardust cursor trail */
@@ -201,10 +222,6 @@ function fairyDustCursor(options) {
     let canvas, context, animationFrame;
 
     const char = "*";
-
-    const prefersReducedMotion = window.matchMedia(
-        "(prefers-reduced-motion: reduce)"
-    );
 
     // Re-initialise or destroy the cursor when the prefers-reduced-motion setting changes
     prefersReducedMotion.onchange = () => {
@@ -417,7 +434,7 @@ new fairyDustCursor();
 
 /* sparkles */
 $(function () {
-
+    if (prefersReducedMotion.matches) return;
     // rainbow as a color generates random rainbow colros
     // count determines number of sparkles
     // overlap allows sparkles to migrate... watch out for other dom elements though.
@@ -744,6 +761,8 @@ function fakeMousePosition(t) {
 }
 
 function updateTextPosition(t) {
+    if (prefersReducedMotion.matches) return;
+
     if (simulateMouseMovement) fakeMousePosition(t);
 
     lerpV2(distanceLerped, distanceFromCenter);
