@@ -222,11 +222,16 @@ a:hover {
 .button:hover {
   color: var(--txt-color-5);
   background: var(--bg-color-8);
-  box-shadow: var(--shadow-glow);
 }
 
 h2+p {
   font-size: var(--size-base);
+}
+
+@media screen and (min-wdith: 768px) {
+  .button:hover {
+    box-shadow: var(--shadow-glow);
+  }
 }
 
 @media screen and (min-width:1600px) {
@@ -301,7 +306,7 @@ lord-icon {
   position: absolute;
   z-index: 100;
   right: 0;
-  top: 100px;
+  top: 60px;
   translate: 100% 0;
   background: #FFFFFFDD;
   padding: var(--size-xl);

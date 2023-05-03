@@ -9,12 +9,15 @@ const joinUs = document.querySelector(".logo-path");
 scrollingWrapper.addEventListener('scroll', function () {
     // detects new state and compares it with the new one
     const currentTopPos = scrollingWrapper.scrollTop;
-    if (currentTopPos < prevTopPos || currentTopPos <= 0) {
+    if (currentTopPos <= prevTopPos || currentTopPos <= 0) {
         document.getElementsByTagName('body')[0].classList.add("scrollUp");
         document.getElementsByTagName('body')[0].classList.remove("scrollDown");
     } else {
         document.getElementsByTagName('body')[0].classList.add("scrollDown");
         document.getElementsByTagName('body')[0].classList.remove("scrollUp");
+    }
+    if (currentTopPos <= 0) {
+        alert("top");
     }
     // saves the new position for iteration.
     prevTopPos = currentTopPos;
