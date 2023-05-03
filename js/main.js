@@ -14,7 +14,7 @@ scrollingWrapper.addEventListener('scroll', function () {
     if (prefersReducedMotion.matches) return;
     // detects new state and compares it with the new one
     const currentTopPos = scrollingWrapper.scrollTop;
-    if (currentTopPos <= prevTopPos || currentTopPos <= 0) {
+    if (currentTopPos < prevTopPos || currentTopPos <= 0) {
         document.getElementsByTagName('body')[0].classList.add("scrollUp");
         document.getElementsByTagName('body')[0].classList.remove("scrollDown");
     } else {
