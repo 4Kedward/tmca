@@ -457,6 +457,10 @@ main {
   opacity: 0;
 }
 
+.scrollToTop .scroll-down-arrow {
+  opacity: 1;
+}
+
 .award-title {
   grid-area: 4 / 2 / 4 / 2;
   align-self: center;

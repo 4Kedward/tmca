@@ -16,8 +16,8 @@ scrollingWrapper.addEventListener('scroll', function () {
         document.getElementsByTagName('body')[0].classList.add("scrollDown");
         document.getElementsByTagName('body')[0].classList.remove("scrollUp");
     }
-    if (currentTopPos <= 0) {
-        alert("top");
+    if (currentTopPos == 0) {
+        document.getElementsByTagName('body')[0].classList.add("scrollToTop");
     }
     // saves the new position for iteration.
     prevTopPos = currentTopPos;
@@ -102,7 +102,34 @@ function playLottie() {
     });
 }
 
+/* swipe for mobile */
+var touchstartX = 0;
+var touchendX = 0;
+
+var gesuredZone = document.querySelector(".experience-image-carousel");
+
+gesuredZone.addEventListener('touchstart', function (event) {
+    touchstartX = event.screenX;
+}, false);
+
+gesuredZone.addEventListener('touchend', function (event) {
+    touchendX = event.screenX;
+    handleGesure();
+}, false);
+
+function handleGesure() {
+    var swiped = 'swiped: ';
+    if (touchendX < touchstartX) {
+        prev();
+    }
+    if (touchendX > touchstartX) {
+        next();
+    }
+}
+
 function prev() {
+    if (currentInd === 0) return;
+
     currentInd--;
     if (currentInd === 0) { prevButton.disabled = true; }
     if (currentInd !== experienceDetails.length - 1) { nextButton.disabled = false; }
@@ -119,6 +146,8 @@ function prev() {
 }
 
 function next() {
+    if (currentInd == experienceDetails.length - 1) return;
+
     currentInd++;
     if (currentInd !== 0) { prevButton.disabled = false; }
     if (currentInd == experienceDetails.length - 1) { nextButton.disabled = true; }
@@ -770,4 +799,3 @@ function getViewPercentage(element) {
 
     return Math.round(percentageInView);
 }
-
