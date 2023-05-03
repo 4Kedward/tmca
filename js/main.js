@@ -6,7 +6,6 @@ let postCardInViewPercentage = 0;
 const scrollingWrapper = document.querySelector('.wrapper');
 const postcard = document.querySelector(".postcard-container");
 const joinUs = document.querySelector(".logo-path");
-
 scrollingWrapper.addEventListener('scroll', function () {
     // detects new state and compares it with the new one
     const currentTopPos = scrollingWrapper.scrollTop;
@@ -25,7 +24,27 @@ scrollingWrapper.addEventListener('scroll', function () {
     if (postCardInViewPercentage > 30) {
         joinUs.classList.add('writing');
     }
+    if (postCardInViewPercentage === 100) {
+        postcard.classList.add('elf-animate');
+    }
     postcard.style.translate = `${(postCardInViewPercentage - 100) * 1.5}% 0`
+});
+
+/* mobile menu */
+const mobileMenuIcon = document.querySelector(".mobile-menu-icon");
+const mobileMenu = document.querySelector(".mobile-menu");
+let isMenuOpen = false;
+
+mobileMenuIcon.addEventListener("click", () => {
+    if (isMenuOpen) {
+        mobileMenu.style.translate = "100%";
+        isMenuOpen = false;
+        mobileMenuIcon.classList.remove("open");
+    } else {
+        mobileMenu.style.translate = "0";
+        isMenuOpen = true;
+        mobileMenuIcon.classList.add("open");
+    }
 });
 
 /* prev and next experience */
@@ -64,7 +83,7 @@ const nextButton = document.querySelector(".next");
 const prevButton = document.querySelector(".prev");
 
 const lotties = experienceCarouselContainer.querySelectorAll("lottie-player");
-const experienceImageWidth = 33.3;
+const experienceImageWidth = document.querySelector(".experience-image").getBoundingClientRect().width;
 
 let currentInd = 0;
 
@@ -92,7 +111,7 @@ function prev() {
     }, 100);
     experienceTitleContainer.innerHTML = experienceDetails[currentInd].title;
     experienceContentContainer.innerHTML = experienceDetails[currentInd].content;
-    experienceImageContainer.style.translate = `${-1 * experienceImageWidth * (currentInd - 1)}dvw 0`;
+    experienceImageContainer.style.translate = `${-1 * experienceImageWidth * (currentInd - 1)}px 0`;
     playLottie();
 }
 
@@ -108,7 +127,7 @@ function next() {
     }, 100);
     experienceTitleContainer.innerHTML = experienceDetails[currentInd].title;
     experienceContentContainer.innerHTML = experienceDetails[currentInd].content;
-    experienceImageContainer.style.translate = `${-1 * experienceImageWidth * (currentInd - 1)}dvw 0`;
+    experienceImageContainer.style.translate = `${-1 * experienceImageWidth * (currentInd - 1)}px 0`;
     playLottie();
 }
 
