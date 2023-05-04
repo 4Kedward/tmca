@@ -26,7 +26,7 @@ scrollingWrapper.addEventListener('scroll', function () {
         document.getElementsByTagName('body')[0].classList.remove("scrollUp");
         scrollUp = false;
     }
-    if (currentTopPos == 0) {
+    if (currentTopPos <= 10) {
         document.getElementsByTagName('body')[0].classList.add("scrollToTop");
         atTop = true;
     }
