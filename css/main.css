@@ -272,7 +272,7 @@ header {
 }
 
 .scrollUp header,
-body .scrollToTop header {
+html body.scrollToTop header {
   transition: var(--normal-500ms-transition);
   -webkit-backdrop-filter: blur(4px);
   backdrop-filter: blur(4px);
