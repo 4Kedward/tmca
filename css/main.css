@@ -272,7 +272,7 @@ header {
 }
 
 .scrollUp header,
-.scrollToTop header {
+body .scrollToTop header {
   transition: var(--normal-500ms-transition);
   -webkit-backdrop-filter: blur(4px);
   backdrop-filter: blur(4px);
@@ -678,6 +678,8 @@ h1 {
   justify-content: center;
   background: var(--bg-color-2);
   padding-block-end: var(--size-xxl);
+  margin-top: -100px;
+  padding-top: 100px;
 }
 
 .postcard-container {
@@ -805,6 +807,11 @@ h1 {
 }
 
 @media screen and (min-width: 768px) {
+  .postcard {
+    margin-top: unset;
+    padding-top: unset;
+  }
+
   .join-us {
     width: 337px;
     height: 97px;
