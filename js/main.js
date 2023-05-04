@@ -796,10 +796,10 @@ function updateTextPosition(t) {
 
     let movementXpercentage = distanceFromCenter.x / halfWidth;
     let movementYpercentage = distanceFromCenter.y / halfHeight;
-    foreground.style.left = `${movementXpercentage * 80}px`;
-    foreground.style.top = `${movementYpercentage * 40}px`;
-    background.style.left = `${movementXpercentage * 30}px`;
-    background.style.top = `${movementYpercentage * 15}px`;
+    foreground.style.left = `${movementXpercentage * 40}px`;
+    foreground.style.top = `${movementYpercentage * 20}px`;
+    background.style.left = `${movementXpercentage * 15}px`;
+    background.style.top = `${movementYpercentage * 8}px`;
 
     requestAnimationFrame(updateTextPosition);
 }

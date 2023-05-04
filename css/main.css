@@ -614,7 +614,7 @@ h1 {
 .far-background {
   background: url(../img/1x/main_bg3.png) no-repeat top center;
   transform: translateZ(-50px) scale(6) translateY(-10px);
-  background-size: 100%;
+  background-size: 110%;
 }
 
 .background {
@@ -661,7 +661,7 @@ h1 {
   }
 
   .far-background {
-    transform: translateZ(-50px) scale(6) translateY(-60px);
+    transform: translateZ(-50px) scale(6) translateY(-120px);
   }
 
 }
