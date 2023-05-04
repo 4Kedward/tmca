@@ -30,6 +30,7 @@ scrollingWrapper.addEventListener('scroll', function () {
         document.getElementsByTagName('body')[0].classList.add("scrollToTop");
         atTop = true;
     }
+    console.log(currentTopPos);
     if (atTop && currentTopPos > 100) {
         document.getElementsByTagName('body')[0].classList.remove("scrollToTop");
         atTop = false;
@@ -45,7 +46,6 @@ scrollingWrapper.addEventListener('scroll', function () {
     if (postCardInViewPercentage === 100) {
         postcard.classList.add('elf-animate');
     }
-    console.log(postCardInViewPercentage);
     if (postCardInViewPercentage < -10 || postCardInViewPercentage > 200) return;
 
     postcard.style.translate = `${(postCardInViewPercentage - 100) * 1.5}% 0`

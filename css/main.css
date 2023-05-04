@@ -271,10 +271,12 @@ header {
   backdrop-filter: unset;
 }
 
-.scrollUp header {
+.scrollUp header,
+.scrollToTop header {
   transition: var(--normal-500ms-transition);
   -webkit-backdrop-filter: blur(4px);
   backdrop-filter: blur(4px);
+  transform: translateY(0);
 }
 
 header div {
