@@ -490,6 +490,7 @@ main {
   translate: -50% 0;
   transition: var(--normal-1000ms-transition);
   cursor: pointer;
+  z-index: 110;
 }
 
 .scrollDown .scroll-down-arrow,
