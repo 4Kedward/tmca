@@ -212,7 +212,7 @@ body:before {
 }
 
 .container {
-  max-width: 1400px;
+  max-width: 1600px;
   margin-inline: var(--size-lg);
 }
 
@@ -259,7 +259,7 @@ h2+p {
 /* header */
 header {
   position: absolute;
-  width: 100%;
+  width: 100dvw;
   padding-block: var(--size-sm);
   z-index: 100;
   transition: var(--normal-1000ms-transition);
@@ -267,11 +267,13 @@ header {
 
 .scrollDown header {
   transform: translateY(-100%);
+  -webkit-backdrop-filter: unset;
   backdrop-filter: unset;
 }
 
 .scrollUp header {
   transition: var(--normal-500ms-transition);
+  -webkit-backdrop-filter: blur(4px);
   backdrop-filter: blur(4px);
 }
 
@@ -458,7 +460,8 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 90dvh;
+  height: 100dvh;
+  isolation: isolate;
 }
 
 .title {
@@ -596,28 +599,34 @@ h1 {
   perspective: 10px;
 }
 
-.parallax-wrapper {
+.far-background,
+.background,
+.foreground {
   position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100dvh;
-  transform-style: preserve-3d;
+  height: clamp(250px, 50vh, 50vh);
+  width: 100vw;
   z-index: -1;
+  left: 0;
+  top: 0;
+  transition: var(--normal-300ms-transition);
 }
 
 .far-background {
   background: url(../img/1x/main_bg3.png) no-repeat top center;
-  transform: translateZ(-50px) scale(6.5) translateY(-20dvh);
+  transform: translateZ(-50px) scale(6) translateY(-10px);
+  background-size: 100%;
 }
 
 .background {
   background: url(../img/SVG/main_bg2.svg) no-repeat top center;
-  transform: translateZ(-13px) scale(3.5) translateY(-14dvh);
+  transform: translateZ(-13px) scale(2.5) translateY(100px);
+  background-size: 100%;
 }
 
 .foreground {
-  transform: translateZ(-3px) scale(1.5) translateY(-28dvh);
+  transform: translateZ(-3px) scale(1) translateY(300px);
+  height: 100dvh;
+  background-size: 100%;
 }
 
 .foreground::before {
@@ -631,18 +640,7 @@ h1 {
   translate: -45% -40px;
 }
 
-.far-background,
-.background,
-.foreground {
-  position: absolute;
-  height: clamp(250px, 50vh, 50vh);
-  width: 100vw;
-  background-size: 100%;
-  z-index: -1;
-  left: 0;
-  top: 0;
-  transition: var(--normal-300ms-transition);
-}
+
 
 @media screen and (min-width: 768px) {
   .wrapper {
@@ -651,12 +649,21 @@ h1 {
 
   .foreground {
     background: url(../img/SVG/main_bg1.svg) repeat-x center 11em;
-    transform: translateZ(-3px) scale(2) translateY(-28dvh);
+    transform: translateZ(-3px) scale(2) translateY(clamp(240px, 15vw, 400px));
   }
 
   .foreground::before {
     display: none;
   }
+
+  .background {
+    transform: translateZ(-13px) scale(2.5) translateY(clamp(80px, 10vw, 100px));
+  }
+
+  .far-background {
+    transform: translateZ(-50px) scale(6) translateY(-60px);
+  }
+
 }
 
 /* postcard */
@@ -892,19 +899,23 @@ h1 {
 
 @keyframes backdrop-fading {
   0% {
-    backdrop-filter: blur(100px) opacity(0);
+    -webkit-backdrop-filter: blur(10px) opacity(0);
+    backdrop-filter: blur(10px) opacity(0);
   }
 
   35% {
+    -webkit-backdrop-filter: blur(100px) opacity(1);
     backdrop-filter: blur(100px) opacity(1);
   }
 
   75% {
+    -webkit-backdrop-filter: blur(100px) opacity(1);
     backdrop-filter: blur(100px) opacity(1);
   }
 
   100% {
-    backdrop-filter: blur(100px) opacity(0);
+    -webkit-backdrop-filter: blur(10px) opacity(0);
+    backdrop-filter: blur(100px) opacity(1);
   }
 }
 
@@ -1145,10 +1156,6 @@ h3 span {
   color: var(--bg-color-1);
 }
 
-.ticket .button {
-  margin-block: var(--size-xl);
-}
-
 .ticket-image {
   position: absolute;
   width: 80%;
@@ -1160,7 +1167,8 @@ h3 span {
   rotate: -3deg;
 }
 
-.ticket div {
+.ticket div,
+.ticket .button {
   z-index: 1;
 }
 
@@ -1239,6 +1247,22 @@ footer .container {
   .main-logo {
     padding-inline: var(--size-lg);
   }
+}
+
+/* safari */
+html,
+body,
+main {
+  position: relative;
+  overflow: hidden;
+}
+
+.wrapper,
+.postcard,
+.experience,
+.ticket {
+  position: relative;
+  overflow-x: hidden;
 }
 
 /* ==========================================================================
