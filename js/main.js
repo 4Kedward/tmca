@@ -26,12 +26,12 @@ scrollingWrapper.addEventListener('scroll', function () {
         document.getElementsByTagName('body')[0].classList.remove("scrollUp");
         scrollUp = false;
     }
-    if (!atTop && currentTopPos == 0) {
+    if (currentTopPos == 0) {
         document.getElementsByTagName('body')[0].classList.add("scrollToTop");
         atTop = true;
     }
     console.log(currentTopPos);
-    if (atTop && currentTopPos > 100) {
+    if (atTop && currentTopPos > 150) {
         document.getElementsByTagName('body')[0].classList.remove("scrollToTop");
         atTop = false;
     }
