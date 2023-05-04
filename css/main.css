@@ -950,6 +950,7 @@ h2:hover {
   background: url(../img/SVG/transition_1.svg) top center repeat-x, url(../img/SVG/transition_2.svg) bottom center repeat-x var(--bg-color-9);
   padding-block: var(--size-xxxl);
   position: relative;
+  min-height: 100dvh;
 }
 
 .experience-image-carousel {
