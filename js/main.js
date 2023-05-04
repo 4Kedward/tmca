@@ -10,7 +10,7 @@ let postCardInViewPercentage = 0;
 const scrollingWrapper = document.querySelector('.wrapper');
 const postcard = document.querySelector(".postcard-container");
 const joinUs = document.querySelector(".logo-path");
-let scrollUp = false;
+let scrollUp = true;
 let atTop = true;
 scrollingWrapper.addEventListener('scroll', function () {
     if (prefersReducedMotion.matches) return;
@@ -30,7 +30,7 @@ scrollingWrapper.addEventListener('scroll', function () {
         document.getElementsByTagName('body')[0].classList.add("scrollToTop");
         atTop = true;
     }
-    if (atTop && currentTopPos !== 0) {
+    if (atTop && currentTopPos > 10) {
         document.getElementsByTagName('body')[0].classList.remove("scrollToTop");
         atTop = false;
     }
