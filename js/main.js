@@ -30,7 +30,7 @@ scrollingWrapper.addEventListener('scroll', function () {
         document.getElementsByTagName('body')[0].classList.add("scrollToTop");
         atTop = true;
     }
-    if (atTop && currentTopPos > 10) {
+    if (atTop && currentTopPos > 100) {
         document.getElementsByTagName('body')[0].classList.remove("scrollToTop");
         atTop = false;
     }
