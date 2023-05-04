@@ -133,7 +133,7 @@
         </g>
       </g>
       <rect x=".5" y="179" width="965.44" height="595.39" fill="none" stroke="#000" stroke-miterlimit="10"/>
-      <text transform="translate(766.91 714.22)" fill="#4c565e" font-family="SegoeScript-Bold, &apos;Segoe Script&apos;" font-size="31.69"><tspan x="0" y="0" letter-spacing=".24em">R</tspan><tspan x="35.37" y="0">.S.V.</tspan><tspan x="101.75" y="0" letter-spacing="-.18em">P</tspan><tspan x="120.78" y="0">.</tspan></text>
+      <text transform="translate(766.91 714.22)" fill="#4c565e" font-family="SegoeScript-Bold, &apos;Segoe Script&apos;" font-size="31.69"><tspan x="0" y="0" letter-spacing=".1em">R.S.V.P.</tspan></text>
       <g>
         <circle cx="831.27" cy="312.89" r="75.5" fill="none" stroke="#4c565e" stroke-miterlimit="10" stroke-width="1.2"/>
         <circle cx="831.27" cy="312.89" r="50.43" fill="none" stroke="#4c565e" stroke-miterlimit="10" stroke-width="1.2"/>

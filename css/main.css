@@ -550,6 +550,10 @@ h1 {
 }
 
 @media screen and (min-width: 768px) {
+  .title-container {
+    min-height: 800px;
+  }
+
   .title {
     grid-template-rows: 30vh clamp(2rem, 8vw, 8rem) 4px 6vw;
     grid-template-columns: 10vw 1fr 10vw;
@@ -613,18 +617,18 @@ h1 {
 
 .far-background {
   background: url(../img/1x/main_bg3.png) no-repeat top center;
-  transform: translateZ(-50px) scale(6) translateY(-10px);
+  transform: translateZ(-50px) scale(6) translateY(0px);
   background-size: 110%;
 }
 
 .background {
   background: url(../img/SVG/main_bg2.svg) no-repeat top center;
-  transform: translateZ(-13px) scale(2.5) translateY(100px);
+  transform: translateZ(-13px) scale(2.5) translateY(clamp(80px, 30vw, 120px));
   background-size: 100%;
 }
 
 .foreground {
-  transform: translateZ(-3px) scale(1) translateY(300px);
+  transform: translateZ(-3px) scale(1) translateY(clamp(250px, 80vw, 400px));
   height: 100dvh;
   background-size: 100%;
 }
