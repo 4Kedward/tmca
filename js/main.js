@@ -87,14 +87,9 @@ scrollArrow.addEventListener("click", (e) => {
 /* prev and next experience */
 const experienceDetails = [
     {
-        title: "<span>Santa's</span>Sleigh Ride",
-        content: "What better way to begin a visit to the North Pole than jump on a sleigh and ride in style?<br /> <br />Reindeers Wilfred and Harvey will be harnessed, sprout - fuelled and ready to fly you direct to North Pole Airport; guided by an advanced magical navigation system and expertly flown by one of our elite Top Fun sleighpilots. After all, we’d hate for you to miss the runway and take a detour through the mystical thicket that surrounds the landing area…",
-        background: "img/1x/bg-sleigh-ride.jpg"
-    },
-    {
-        title: "Memory Lane",
-        content: "Come and take a trip down Memory Lane to see where Santa’s Elves live. Stroll through the quaint high street and don’t forget to pop in to the Bar Humbug Sweet Shop for a special Christmas treat, before heading off down the twinkling tunnel of lights.",
-        background: "img/1x/memory_lane.jpg"
+        title: "<span>North Pole</span>Passport Control",
+        content: "Check in to your destination and meet Durwood; the newly appointed Head of North Pole customs. Some say he is the smartest elf in the North (although that might be more to do with his immaculate appearance). Still, he can spot a Christmas Grinch a mile off, and heaven help anyone caught smuggling penguins. Of course there is usually nothing to worry about – so long as your paperwork is in order, your belief in Christmas is intact and you haven’t done anything naughty lately.<br /><br />Good luck!",
+        background: "img/1x/passport-control.jpg"
     },
     {
         title: "<span>Santa's</span>Sleigh Ride",
@@ -104,9 +99,78 @@ const experienceDetails = [
     {
         title: "Memory Lane",
         content: "Come and take a trip down Memory Lane to see where Santa’s Elves live. Stroll through the quaint high street and don’t forget to pop in to the Bar Humbug Sweet Shop for a special Christmas treat, before heading off down the twinkling tunnel of lights.",
-        background: "img/1x/memory_lane.jpg"
-    }
-
+        background: "img/1x/memory-lane.jpg"
+    },
+    {
+        title: "<span>The</span>Rolling Dads",
+        content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        background: "img/1x/rolling-dads.jpg"
+    },
+    {
+        title: "Toy Factory",
+        content: "The eccentric toy inventor Socks will give you a guided tour of our ingenious Toy Research and Development facility and reveal the latest in toy innovations. He is immensely proud of all his creations – mind you, he is starting to regret installing advanced A.I. systems into Aurora, a particularly sassy toy unicorn who loves to heckle.",
+        background: "img/1x/toy-factory.jpg"
+    },
+    {
+        title: "Bear Caves",
+        content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        background: "img/1x/bear-caves.jpg"
+    },
+    {
+        title: "<span>The</span>Ice Castle",
+        content: "You’ve arrived at the North’s most impressive landmark; the Ice Castle. One of the Castle Wardens is very pleased to welcome you to the castle grounds. The other castle Warden… is not.<br /><br />So come on in, but please stay out.Come closer, but go away! It seems like those two will never agree, but there is one way to sort it out; a giant North Pole snowball battle.Pick a side, grab a snowball, and join the fray!",
+        background: "img/1x/ice-castle.jpg"
+    },
+    {
+        title: "Sleigh Traffic Control",
+        content: "With all the sleighs dashing to and from the North Pole, making deliveries, transporting our special visitors, and of course the most important flight of the year: Santa’s Christmas run; somebody has to make sure the whole operation is running smoothly.<br /><br />Here at Sleigh Traffic Control, our Head of Flight Operations Peggy Asus monitors flight paths and makes sure all interstellar portals and wormholes are working correctly to keep the North Pole sleigh routes open and on time.",
+        background: "img/1x/traffic-control.jpg"
+    },
+    {
+        title: "<span>Meet</span>Santa",
+        content: "It’s time to meet the most important person in the whole of the North Pole; the big man himself, the seasonal superintendent, the festive foreman, the bringer of joy and Christmas presents, Santa Claus.<br /><br />He’s joyful and jolly, marvellously magical, and he’s always ready with a wink and a witty one- liner.And of course, he’s known you and your family your whole lives, so it’s bound to be a happy reunion as you reminisce together and look towards the future.<br /><br />After your visit with Santa, take some time to explore the local village, Sparkle Copse, at your leisure…",
+        background: "img/1x/meet-santa.jpg"
+    },
+    {
+        title: "Toy Design Awards",
+        content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        background: "img/1x/toy-design-awards.jpg"
+    },
+    {
+        title: "<span>Sparkle Copse</span>Enchanted Forest",
+        content: "The trees have ears… and often eyes, nose and mouth too. They are probably some of the friendliest and happiest trees you are ever likely to meet. So step inside the enchanted forest and take the winding, scenic route towards Santa’s place, located at the very heart of his kingdom; the North Pole itself.",
+        background: "img/1x/enchanted-forest.jpg"
+    },
+    {
+        title: "<span>Make</span>Reindeer Food",
+        content: "Santa loves it when boys and girls put little treats out for his reindeer on Christmas Eve. But sometimes people leave out the strangest things – clearly they’ve never owned a reindeer of their own. Well, never fear.Here at the Reindeer Kitchen we have expert reindeer on hand to help you prepare a tasty and nutritious snack to keep Santa’s champions flying high on their busiest night of the year.",
+        background: "img/1x/reindeer-food.jpg"
+    },
+    {
+        title: "Mrs Clause",
+        content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        background: "img/1x/mrs-clause.jpg"
+    },
+    {
+        title: "Ice Scenes",
+        content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        background: "img/1x/ice-scenes.jpg"
+    },
+    {
+        title: "Bart's Workshop",
+        content: "It takes a bear to Build a Teddy. Santa’s personal teddy bear Bartholomew is on hand to assist you in making your own terrific teddy that will be yours to love forever.",
+        background: "img/1x/barts-workshop.jpg"
+    },
+    {
+        title: "Crumble's Cookie Decorating",
+        content: "Home to the most talented cook and best baker in the village; mind you, they do fall behind schedule quite often, so you might have to get stuck in and lend a hand to complete your order. Keep your wits about you as you work, because the kitchen is generally quite chaotic, as befits a culinary genius.",
+        background: "img/1x/cookie-decorating.jpg"
+    },
+    {
+        title: "North Pole Station",
+        content: "You’ve come to the end of your Yuletide jaunt, so it’s time to travel home in style. Catch a supersonic train ride through the Northern forests and all the way back to the UK. It’s quite a distance, but thanks to our time-travelling hyper-technology, we’ll have you home in minutes.",
+        background: "img/1x/north-pole-station.jpg"
+    },
 ]
 
 const experienceCarouselContainer = document.querySelector(".experience-image-carousel");
