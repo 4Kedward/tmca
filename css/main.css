@@ -832,11 +832,11 @@ h1 {
   }
 
   .elf-animate::before {
-    /*animation: elf-boy-animation 1300ms ease-in-out 500ms 1 forwards;*/
+    animation: elf-boy-animation 2300ms ease-in-out 500ms 1 forwards;
   }
 
   .elf-animate::after {
-    /*animation: elf-girl-animation 1200ms ease-in-out 900ms 1 forwards;*/
+    animation: elf-girl-animation 2200ms ease-in-out 900ms 1 forwards;
   }
 
   @keyframes elf-boy-animation {
@@ -844,7 +844,8 @@ h1 {
       rotate: 0deg;
     }
 
-    50% {
+    35%,
+    70% {
       rotate: -45deg
     }
 
@@ -858,7 +859,8 @@ h1 {
       rotate: 0deg;
     }
 
-    50% {
+    35%,
+    70% {
       rotate: 45deg
     }
 

@@ -10,21 +10,29 @@ let postCardInViewPercentage = 0;
 const scrollingWrapper = document.querySelector('.wrapper');
 const postcard = document.querySelector(".postcard-container");
 const joinUs = document.querySelector(".logo-path");
+let scrollUp = false;
+let atTop = true;
 scrollingWrapper.addEventListener('scroll', function () {
     if (prefersReducedMotion.matches) return;
     // detects new state and compares it with the new one
     const currentTopPos = scrollingWrapper.scrollTop;
-    if (currentTopPos < prevTopPos || currentTopPos <= 0) {
+    if (!scrollUp && (currentTopPos < prevTopPos || currentTopPos <= 0)) {
         document.getElementsByTagName('body')[0].classList.add("scrollUp");
         document.getElementsByTagName('body')[0].classList.remove("scrollDown");
-    } else {
+        scrollUp = true;
+    }
+    if (scrollUp && (currentTopPos > prevTopPos)) {
         document.getElementsByTagName('body')[0].classList.add("scrollDown");
         document.getElementsByTagName('body')[0].classList.remove("scrollUp");
+        scrollUp = false;
     }
-    if (currentTopPos == 0) {
+    if (!atTop && currentTopPos == 0) {
         document.getElementsByTagName('body')[0].classList.add("scrollToTop");
-    } else {
+        atTop = true;
+    }
+    if (atTop && currentTopPos !== 0) {
         document.getElementsByTagName('body')[0].classList.remove("scrollToTop");
+        atTop = false;
     }
     // saves the new position for iteration.
     prevTopPos = currentTopPos;
@@ -37,6 +45,9 @@ scrollingWrapper.addEventListener('scroll', function () {
     if (postCardInViewPercentage === 100) {
         postcard.classList.add('elf-animate');
     }
+    console.log(postCardInViewPercentage);
+    if (postCardInViewPercentage < -10 || postCardInViewPercentage > 200) return;
+
     postcard.style.translate = `${(postCardInViewPercentage - 100) * 1.5}% 0`
 });
 
