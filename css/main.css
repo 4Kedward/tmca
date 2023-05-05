@@ -955,7 +955,7 @@ h2:hover {
 
 .experience-image-carousel {
   width: 100dvw;
-  min-height: 200px;
+  min-height: 300px;
   margin-block: var(--size-xl);
   background: url(../img/SVG/crystal.svg) no-repeat center 70%;
   position: relative;
@@ -968,13 +968,13 @@ h2:hover {
   transition: var(--normal-1000ms-transition);
   align-items: center;
   justify-content: center;
-  height: 100%;
   translate: 100dvw;
   left: -100dvw;
 }
 
 .experience-image {
   width: 100dvw;
+  height: 60%;
   padding-inline: 20dvw;
   display: flex;
   align-items: center;
@@ -987,6 +987,11 @@ h2:hover {
   scale: 0.5;
   filter: grayscale(80);
   transition: var(--bouncy-800ms-transition);
+}
+
+.experience-image lottie-player,
+.experience-image dotlottie-player {
+  translate: 0 3em;
 }
 
 .experience-image .active-lottie {
@@ -1073,7 +1078,7 @@ h3 span {
   padding: 0 var(--size-md);
 }
 
-@media screen and (min-width:480px) {
+@media screen and (min-width: 768px) {
   .experience-description div {
     flex-direction: row;
   }
@@ -1088,9 +1093,7 @@ h3 span {
     padding: var(--size-xs) var(--size-md);
     border-inline-start: 1px solid var(--txt-color-1);
   }
-}
 
-@media screen and (min-width: 768px) {
   .experience {
     background-attachment: fixed;
   }
@@ -1111,11 +1114,7 @@ h3 span {
   .experience-image-container {
     translate: 33.3dvw;
     left: 0;
-  }
-
-  .experience-image lottie-player,
-  .experience-image dotlottie-player {
-    translate: 0 -3em;
+    height: 100%;
   }
 
   .experience h3 {
@@ -1125,6 +1124,11 @@ h3 span {
 
   .experience h3:has(span) {
     translate: 0 1.25em;
+  }
+
+  .experience-image lottie-player,
+  .experience-image dotlottie-player {
+    translate: 0 -1em;
   }
 }
 
@@ -1140,6 +1144,8 @@ h3 span {
   .experience-image-carousel {
     min-height: 400px;
   }
+
+
 
 }
 

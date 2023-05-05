@@ -182,7 +182,11 @@ const nextButton = document.querySelector(".next");
 const prevButton = document.querySelector(".prev");
 
 const lotties = experienceCarouselContainer.querySelectorAll("lottie-player");
-const experienceImageWidth = document.querySelector(".experience-image").getBoundingClientRect().width;
+let experienceImageWidth = document.querySelector(".experience-image").getBoundingClientRect().width;
+window.addEventListener("resize", () => {
+    experienceImageWidth = document.querySelector(".experience-image").getBoundingClientRect().width;
+});
+
 
 let currentInd = 0;
 
@@ -816,17 +820,19 @@ const container = document.querySelector(".title-container");
 const copies = document.querySelectorAll(".copy");
 
 /* parallax bg mouse move */
-const halfWidth = window.innerWidth / 2;
-const halfHeight = window.innerHeight / 2;
+let halfWidth = window.innerWidth / 2;
+let halfHeight = window.innerHeight / 2;
 
 const farBackground = document.querySelector(".far-background");
 const background = document.querySelector(".background");
 const foreground = document.querySelector(".foreground");
 
 function updateCenter() {
+    halfWidth = window.innerWidth / 2;
+    halfHeight = window.innerHeight / 2;
     const rect = container.getBoundingClientRect();
     center.x = rect.left + rect.width / 2;
-    center.y = rect.top + rect.height / 2;
+    center.y = halfHeight
 }
 
 function trackMousePosition(event) {
@@ -896,18 +902,11 @@ function getViewPercentage(element) {
     const viewport = {
         center: window.pageYOffset + window.innerHeight / 2
     };
-
     const elementBoundingRect = element.getBoundingClientRect();
-
-    const initialElementPos = elementBoundingRect.height / 2 + window.pageYOffset - 200;
-
     const elementPos = {
         center: elementBoundingRect.y + elementBoundingRect.height / 2 + window.pageYOffset
     };
-
     let percentageInView = 100 - (viewport.center - elementPos.center) / viewport.center * 100;
-
     if (percentageInView > 80 && percentageInView < 120) { percentageInView = 100; }
-
     return Math.round(percentageInView);
 }
