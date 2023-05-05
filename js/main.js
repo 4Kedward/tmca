@@ -12,6 +12,10 @@ const postcard = document.querySelector(".postcard-container");
 const joinUs = document.querySelector(".logo-path");
 let scrollUp = true;
 let atTop = true;
+
+// get scrollbar width
+document.documentElement.style.setProperty('--scrollbar-width', (scrollingWrapper.offsetWidth - scrollingWrapper.clientWidth) + 'px');
+
 scrollingWrapper.addEventListener('scroll', function () {
     if (prefersReducedMotion.matches) return;
     // detects new state and compares it with the new one
@@ -117,7 +121,7 @@ const experienceDetails = [
     },
     {
         title: "<span>The</span>Ice Castle",
-        content: "You’ve arrived at the North’s most impressive landmark; the Ice Castle. One of the Castle Wardens is very pleased to welcome you to the castle grounds. The other castle Warden… is not.<br /><br />So come on in, but please stay out.Come closer, but go away! It seems like those two will never agree, but there is one way to sort it out; a giant North Pole snowball battle.Pick a side, grab a snowball, and join the fray!",
+        content: "You’ve arrived at the North’s most impressive landmark; the Ice Castle. One of the Castle Wardens is very pleased to welcome you to the castle grounds. The other castle Warden… is not.<br /><br />So come on in, but please stay out. Come closer, but go away! It seems like those two will never agree, but there is one way to sort it out; a giant North Pole snowball battle. Pick a side, grab a snowball, and join the fray!",
         background: "img/1x/ice-castle.jpg"
     },
     {

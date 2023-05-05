@@ -259,9 +259,11 @@ h2+p {
 /* header */
 header {
   position: absolute;
-  width: 100dvw;
+  width: calc(100dvw - var(--scrollbar-width));
   padding-block: var(--size-sm);
   z-index: 100;
+  left: 0;
+  top: 0;
   transition: var(--normal-1000ms-transition);
 }
 
