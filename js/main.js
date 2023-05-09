@@ -131,7 +131,7 @@ const experienceDetails = [
     },
     {
         title: "<span>Meet</span>Santa",
-        content: "It’s time to meet the most important person in the whole of the North Pole; the big man himself, the seasonal superintendent, the festive foreman, the bringer of joy and Christmas presents, Santa Claus.<br /><br />He’s joyful and jolly, marvellously magical, and he’s always ready with a wink and a witty one- liner.And of course, he’s known you and your family your whole lives, so it’s bound to be a happy reunion as you reminisce together and look towards the future.<br /><br />After your visit with Santa, take some time to explore the local village, Sparkle Copse, at your leisure…",
+        content: "It’s time to meet the most important person in the whole of the North Pole; the big man himself, the seasonal superintendent, the festive foreman, the bringer of joy and Christmas presents, Santa Claus. He’s joyful and jolly, marvellously magical, and he’s always ready with a wink and a witty one- liner.And of course, he’s known you and your family your whole lives, so it’s bound to be a happy reunion as you reminisce together and look towards the future.<br /><br />After your visit with Santa, take some time to explore the local village, Sparkle Copse, at your leisure…",
         background: "img/1x/meet-santa.jpg"
     },
     {
@@ -186,10 +186,20 @@ const nextButton = document.querySelector(".next");
 const prevButton = document.querySelector(".prev");
 
 const lotties = experienceCarouselContainer.querySelectorAll("lottie-player");
+
 let experienceImageWidth = document.querySelector(".experience-image").getBoundingClientRect().width;
 window.addEventListener("resize", () => {
     experienceImageWidth = document.querySelector(".experience-image").getBoundingClientRect().width;
 });
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.play();
+        }
+    })
+}, { threshold: 1 })
+observer.observe(document.querySelector(".active-lottie"));
 
 
 let currentInd = 0;
