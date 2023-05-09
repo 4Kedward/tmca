@@ -212,18 +212,18 @@ function playLottie() {
 var touchstartX = 0;
 var touchendX = 0;
 
-var gesuredZone = document.querySelector(".experience-image");
+var gesuredZone = document.querySelectorAll("lottie-player");
 
-gesuredZone.addEventListener('touchstart', function (event) {
+gesuredZone.forEach((zone) => zone.addEventListener('touchstart', function (event) {
     event.preventDefault();
     touchstartX = event.targetTouches[0].clientX;
-}, { passive: false });
+}, { passive: false }));
 
-gesuredZone.addEventListener('touchend', function (event) {
+gesuredZone.forEach((zone) => zone.addEventListener('touchend', function (event) {
     event.preventDefault();
     touchendX = event.changedTouches[0].clientX;
     handleGesure();
-}, { passive: false });
+}, { passive: false }));
 
 function handleGesure() {
     if (touchendX < touchstartX) {
